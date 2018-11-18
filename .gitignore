@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/GameOfLie
+/GameOfLie/GameOfLie/bin/Debug/netstandard2.0
+/GameOfLie/GameOfLie/obj
+/GameOfLie/GameOfLie.Android/bin/Debug
+/GameOfLie/GameOfLie.Android/obj
+/GameOfLie/GameOfLie.iOS/obj
+/GameOfLie/GameOfLie.UWP/bin/x86/Debug
+/GameOfLie/GameOfLie.UWP/obj
