@@ -9,9 +9,9 @@ namespace GameOfLie
     {
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(License.Key);
             InitializeComponent();
-
-            MainPage = new GameRoom();
+            MainPage = new StartupRoom();
         }
 
         protected override void OnStart()

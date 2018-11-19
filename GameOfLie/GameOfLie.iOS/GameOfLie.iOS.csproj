@@ -95,6 +95,9 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\radialmenu_RadialMenu.ttf" />
+    <BundleResource Include="Resources\radialmenu_Segoe MDL2 Assets.ttf" />
+    <BundleResource Include="Resources\radialmenu_Social.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -150,6 +153,9 @@
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms">
       <Version>1.60.3</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu">
+      <Version>16.3.0.29</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
