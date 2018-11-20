@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms" 
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:convertors="clr-namespace:GameOfLie.Converters"
              x:Class="GameOfLie.StartupRoom">
     <ContentPage.Resources>
         <convertors:CustomizationFontConversion x:Key="fontConversion"/>
     </ContentPage.Resources>
-    <StackLayout>
+    <StackLayout Padding="20">
         <Label Text="{Binding Source={x:Reference rows},
             Path=Value,
             StringFormat='Rows Count: {0}'}"/>
@@ -22,7 +23,13 @@
                 Maximum="125" 
                 Minimum="5"
                 Value="{Binding ColumnCounts}"/>
-        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Alive Color: "/>
+            <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="CanvasView_PaintSurface" 
+                               HeightRequest="20"
+                               WidthRequest="20"/>
+        </StackLayout>
         <radialMenu:SfRadialMenu x:Name="teamUSARadialMenu" CenterButtonRadius="30" CenterButtonBackgroundColor="#383838" 
                                  RimColor="#FFCDCBCE" SelectionColor="Gray" CenterButtonBorderColor="#ffffff" 
                                  CenterButtonText="" CenterButtonTextColor="White" 

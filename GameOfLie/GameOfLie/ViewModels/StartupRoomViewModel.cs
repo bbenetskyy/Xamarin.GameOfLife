@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -30,17 +31,9 @@ namespace GameOfLie.ViewModels
             set { columnCounts = value; OnPropertyChanged(); }
         }
 
-        private Color deadColor;
+        private SKColor aliveColor;
 
-        public Color DeadColor
-        {
-            get => deadColor;
-            set { deadColor = value; OnPropertyChanged(); }
-        }
-
-        private Color aliveColor;
-
-        public Color AliveColor
+        public SKColor AliveColor
         {
             get => aliveColor;
             set { aliveColor = value; OnPropertyChanged(); }

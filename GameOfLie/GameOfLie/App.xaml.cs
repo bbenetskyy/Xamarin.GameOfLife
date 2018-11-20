@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +8,30 @@ namespace GameOfLie
 {
     public partial class App : Application
     {
+        public static SKPaint DeadPaint = new SKPaint
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColors.Black
+        };
+        public static SKPaint AlivePaint = new SKPaint
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColors.WhiteSmoke
+        };
+
         public App()
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(License.Key);
             InitializeComponent();
-            MainPage = new StartupRoom();
+            if(Device.RuntimePlatform == Device.Android ||
+                Device.RuntimePlatform == Device.iOS)
+            {
+                MainPage = new StartupRoom();
+            }
+            else
+            {
+                MainPage = new GameRoom();
+            }
         }
 
         protected override void OnStart()

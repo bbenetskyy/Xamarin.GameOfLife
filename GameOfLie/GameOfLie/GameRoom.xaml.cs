@@ -8,19 +8,7 @@ namespace GameOfLie
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GameRoom : ContentPage
-	{
-        public SKPaint DeadPaint = new SKPaint
-        {
-            Style = SKPaintStyle.Fill,
-            Color = SKColors.Black
-        };
-        public SKPaint AlivePaint = new SKPaint
-        {
-            Style = SKPaintStyle.Fill,
-            Color = SKColors.WhiteSmoke
-        };
-
-
+    { 
         private bool[,] _state;
         //private bool[,] _state = new bool[,]
         //{
@@ -74,13 +62,12 @@ namespace GameOfLie
                     if(_state[i, j])
                     {
                         //alive
-                        //canvas.DrawRect(rectWidth * j, rectHeight * i, rectWidth, rectHeight, AlivePaint);
-                        canvas.DrawCircle(rectWidth * j, rectHeight * i, rectHeight / 5, AlivePaint);
+                        canvas.DrawCircle(rectWidth * j, rectHeight * i, rectHeight / 5, App.AlivePaint);
                     }
                     else
                     {
                         //dead 
-                        canvas.DrawRect(rectWidth * j, rectHeight * i, rectWidth, rectHeight, DeadPaint);
+                        canvas.DrawRect(rectWidth * j, rectHeight * i, rectWidth, rectHeight, App.DeadPaint);
                     }
                 }
             }
