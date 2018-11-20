@@ -19,7 +19,7 @@ namespace GameOfLie
         public StartupRoom()
         {
             InitializeComponent();
-            viewModel = new StartupRoomViewModel();
+            viewModel = new StartupRoomViewModel(this);
             viewModel.AliveColor = App.AlivePaint.Color;
             BindingContext = viewModel;
         }
@@ -50,11 +50,8 @@ namespace GameOfLie
             var rows = state.GetLength(0);
             var columns = state.GetLength(1);
 
-
             var rectHeight = height / rows;
             var rectWidth = width / columns;
-
-
 
             var padding = 15;
             var activeColor = new SKPaint

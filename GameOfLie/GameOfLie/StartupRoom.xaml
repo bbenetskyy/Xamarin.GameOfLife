@@ -4,6 +4,7 @@
              xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms" 
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:convertors="clr-namespace:GameOfLie.Converters"
+             Title="Startup Room"
              x:Class="GameOfLie.StartupRoom">
     <ContentPage.Resources>
         <convertors:CustomizationFontConversion x:Key="fontConversion"/>
@@ -30,9 +31,11 @@
                                HeightRequest="20"
                                WidthRequest="20"/>
         </StackLayout>
+        <Button Command="{Binding NavigateToGame}" Text="{Binding NavButtonText}"/>
         <radialMenu:SfRadialMenu x:Name="teamUSARadialMenu" CenterButtonRadius="30" CenterButtonBackgroundColor="#383838" 
                                  RimColor="#FFCDCBCE" SelectionColor="Gray" CenterButtonBorderColor="#ffffff" 
                                  CenterButtonText="" CenterButtonTextColor="White" 
+                                 Margin="0,-80,0,0"
                                  CenterButtonFontFamily="{Binding Converter={StaticResource fontConversion}}" 
                                  CenterButtonFontSize="18" CenterButtonBackText="" CenterButtonBackTextColor="White" 
                                  CenterButtonBackFontFamily="{Binding Converter={StaticResource fontConversion}}" 

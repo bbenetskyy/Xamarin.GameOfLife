@@ -1,4 +1,5 @@
 ﻿using GameOfLie.Logic;
+using GameOfLie.Models;
 using SkiaSharp;
 using System;
 using Xamarin.Forms;
@@ -20,8 +21,18 @@ namespace GameOfLie
         //};
 
         private Matrix _matrix;
-            
-        public GameRoom ()
+
+        public GameRoom()
+            : this(new ConfigurationModel
+            {
+                AliveColor = App.AlivePaint.Color,
+                ColumnCounts = 125,
+                RowCounts = 75
+            })
+        {
+
+        }
+        public GameRoom (ConfigurationModel configurationModel)
 		{
 			InitializeComponent();
 

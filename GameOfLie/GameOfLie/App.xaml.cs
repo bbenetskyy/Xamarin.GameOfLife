@@ -26,7 +26,7 @@ namespace GameOfLie
             if(Device.RuntimePlatform == Device.Android ||
                 Device.RuntimePlatform == Device.iOS)
             {
-                MainPage = new StartupRoom();
+                MainPage = new NavigationPage (new StartupRoom());
             }
             else
             {
