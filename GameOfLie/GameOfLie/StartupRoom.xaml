@@ -39,6 +39,7 @@
                                  CenterButtonBackFontSize="18" EnableCenterButtonAnimation="false" IsDragEnabled="false" 
                                  RimRadius="75" AnimationDuration="300" SeparatorThickness="1">
             <radialMenu:SfRadialMenu.Items>
+                <radialMenu:SfRadialMenuItem ItemTapped="Handle_ItemTapped" BackgroundColor="#ffffff"/>
                 <radialMenu:SfRadialMenuItem BackgroundColor="#00cc1d">
                     <radialMenu:SfRadialMenuItem.Items>
                         <radialMenu:SfRadialMenuItem ItemTapped="Handle_ItemTapped" BackgroundColor="#00440a" />
