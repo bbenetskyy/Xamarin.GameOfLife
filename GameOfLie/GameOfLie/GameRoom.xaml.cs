@@ -9,7 +9,8 @@ namespace GameOfLie
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GameRoom : ContentPage
-    { 
+    {
+        private readonly ConfigurationModel _configurationModel;
         private bool[,] _state;
         //private bool[,] _state = new bool[,]
         //{
@@ -36,9 +37,9 @@ namespace GameOfLie
 		{
 			InitializeComponent();
 
-            var xLength = 75;
-            var yLength = 125;
-            _state = Matrix.GenerateInitialState(xLength, yLength);
+            _configurationModel = configurationModel;
+
+            _state = Matrix.GenerateInitialState(_configurationModel.RowCounts, _configurationModel.ColumnCounts);
             _matrix = new Matrix(_state);
             Device.StartTimer(TimeSpan.FromSeconds(10f/60), () =>
             {
@@ -65,6 +66,11 @@ namespace GameOfLie
             var rectHeight = height/ rows;
             var rectWidth = width / columns;
 
+            var alivePaint = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = _configurationModel.AliveColor
+            };
 
             for (int i = 0; i < _state.GetLength(0); i++)
             {
@@ -73,7 +79,7 @@ namespace GameOfLie
                     if(_state[i, j])
                     {
                         //alive
-                        canvas.DrawCircle(rectWidth * j, rectHeight * i, rectHeight / 5, App.AlivePaint);
+                        canvas.DrawCircle(rectWidth * j, rectHeight * i, rectHeight / 5, alivePaint);
                     }
                     else
                     {
