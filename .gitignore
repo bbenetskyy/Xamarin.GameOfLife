@@ -12,3 +12,6 @@
 /GameOfLie/GameOfLie.UWP/obj
 /GameOfLie/GameOfLie/License.cs
 /GameOfLie/GameOfLie.iOS/bin/iPhoneSimulator/Debug
+/GameOfLie/GameOfLie/bin/Release/netstandard2.0
+/GameOfLie/GameOfLie.Android/bin/Release
+/GameOfLie/GameOfLie.UWP/bin/x86/Release/ilc
