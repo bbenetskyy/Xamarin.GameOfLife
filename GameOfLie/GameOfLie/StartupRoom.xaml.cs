@@ -53,7 +53,7 @@ namespace GameOfLie
             var rectHeight = height / rows;
             var rectWidth = width / columns;
 
-            var padding = 15;
+            var padding = 10;
             var activeColor = new SKPaint
             {
                 Style = SKPaintStyle.Fill,

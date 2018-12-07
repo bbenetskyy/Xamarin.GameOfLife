@@ -41,7 +41,7 @@ namespace GameOfLie
 
             _state = Matrix.GenerateInitialState(_configurationModel.RowCounts, _configurationModel.ColumnCounts);
             _matrix = new Matrix(_state);
-            Device.StartTimer(TimeSpan.FromSeconds(10f/60), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(5f/60), () =>
             {
                 _state = _matrix.Next();
                 canvasView.InvalidateSurface();
